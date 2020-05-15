@@ -4,10 +4,6 @@ import argparse
 import json
 from dotenv import load_dotenv
 
-
-TOKEN = os.getenv('BITLY_TOKEN')
-
-
 def shorten_link(token, url):
     response = requests.get('https://' + url)
     response.raise_for_status()
@@ -27,6 +23,8 @@ def count_clicks(token, url):
 
 if __name__ == '__main__':
     load_dotenv()
+    
+    TOKEN = os.getenv('BITLY_TOKEN')
 
     parser = argparse.ArgumentParser(description='Сокращение ссылки или подсчет кликов!')
     parser.add_argument('url', help='ссылка')
