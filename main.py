@@ -24,7 +24,7 @@ def count_clicks(token, url):
 if __name__ == '__main__':
     load_dotenv()
     
-    TOKEN = os.getenv('BITLY_TOKEN')
+    token = os.getenv('BITLY_TOKEN')
 
     parser = argparse.ArgumentParser(description='Сокращение ссылки или подсчет кликов!')
     parser.add_argument('url', help='ссылка')
